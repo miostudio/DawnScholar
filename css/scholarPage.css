@@ -1,0 +1,63 @@
+﻿/*version0.2*/
+
+body{padding:0; margin:0; font-family:"Microsoft YaHei";}
+div,input {vertical-align:middle}/*css里面文本框和按钮对不齐*/
+.spacer{padding:0 30px;}
+.myWrap{width:1000px; margin:0px auto;  }
+#mySearchForm{font-size:15px;  border-bottom:2px red solid; padding:5px; margin-bottom:2px;}
+#mySearchForm b{	padding:0 5px;	width:100%;}
+#mySearchForm input{ border:1px solid #0096ff;  height:38px; margin:5px 0;}
+#mySearchForm input[type="text"]{width:60%;}
+
+#mySearchForm #page{ width:30px; padding-left:15px;}
+
+.btn{
+    cursor: pointer;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 10px;
+    border: 0;
+    background-color: #38f;
+    font-size: 16px;
+    color: white;
+}
+.btn:hover{
+	background:#2D74D7;
+}
+.card{
+	background: #0096ff;
+    width: 120px;
+    position: relative;
+    margin: 2em 2em;
+    padding: 15px;
+    box-shadow: 0px 3px rgba( 0, 0, 0, 0.1);
+    color: #E8E8E8;
+    font-size: 14px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+	
+
+}
+.card.announce {
+    position: absolute;
+    margin: 2em 5px;
+    right: 0;
+    top: 0;
+}
+.card a{
+	color:#fff;
+}
+.light{
+	background-color: #f8f8f8;
+	color: #222;
+    border: 1px solid #c6c6c6;
+}
+
+#erWeiMa{
+	position:absolute;
+	top:30px;
+	padding:5px;
+}
+#erWeiMa img{width:120px; }
+
