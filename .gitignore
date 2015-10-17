@@ -1,0 +1,20 @@
+# Windows:
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# My configurations:
+sn.ini
+deploy_key_rsa
+
+#备份版本不算
+*.backup.zip
+*.backup.php
+dustbin
+**/dustbin/
+backup
+**/backup/
+
+#显示文件列表
+*.list.bat
+*.list.txt
