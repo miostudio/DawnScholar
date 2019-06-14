@@ -26,3 +26,9 @@ The most update version now is version0.3.
  - 但是不够优雅 -> 打算用ajax实现以下；
  - 易用性不好 -> 重新排版。
 
+
+#v0.2.6 新增看新闻功能
+1.使用 open_url.php 输入网址，复制新闻文字。并找到需要的图片链接
+2.使用 getPic.php?url=https://www.XX.com/aa.png 下载图片，定期删除图片。
+3.查看图片：http://a.biomooc.com/img/aa.png ，注意 文件名和url中的一致。
+

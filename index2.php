@@ -75,11 +75,11 @@ div,input {vertical-align:middle}/*css里面文本框和按钮对不齐*/
 
 <div id="url_info" class='card announce'>
 	<b>Basic版</b><h2>永久免费</h2>
-	<br><a href="scholar/help.php" target="_blank" title="帮助">帮助文档</a>.
+	<br><a href="help.php" target="_blank" title="帮助">帮助文档</a>.
 </div>
 
 <div id='erWeiMa'>
-	<img src='scholar/images/fxxsEWM.jpg' /><br>
+	<img src='images/fxxsEWM.jpg' /><br>
 	<b>扫一扫关注微信号</b>
 </div>
 
@@ -111,7 +111,7 @@ div,input {vertical-align:middle}/*css里面文本框和按钮对不齐*/
 		<h1>当前为Basic版</h1>
 		<p>Basic版不能检索多个关键词, 不能翻页, 不能选择年份.</p>
 		<p>   
-		更好体验请 <a href='scholar/index.php' type="button" class="btn btn-lg btn-danger">登录Pro版</a> scholar search.</p>
+		更好体验请 <a href='index.php' type="button" class="btn btn-lg btn-danger">登录Pro版</a> scholar search.</p>
 	</div>
 
  
@@ -119,7 +119,7 @@ div,input {vertical-align:middle}/*css里面文本框和按钮对不齐*/
 	
 
 <?php
-require 'scholar/common/function.php';
+require 'common/function.php';
 define('DEBUG_MODE',true);
 
 //$url="http://www.google.com.hk/search?ie=UTF-8&q=武汉";

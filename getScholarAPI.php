@@ -1,6 +1,6 @@
 ﻿<?php
 header("Content-type: text/html; charset=utf-8"); 
-define('DEBUG_MODE',true);//是否开启调试模式
+define('DEBUG_MODE',false);//是否开启调试模式
 require 'common/function.php';//引用库
 
 if(!isset($_POST['submit'])){ 

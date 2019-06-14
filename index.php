@@ -55,7 +55,7 @@ require 'common/function.php';
 
 <body>
 <div id="url_info" class='card announce'>
-	<h1>免费试用</h1><h3>To 2015.10.1</h3>
+	<h1>免费试用</h1><h3>To 2099.10.1</h3>
 	<b>红线之上可操作!</b><br><a href="help.php" target="_blank" title="帮助">帮助文档</a>.
 </div>
 
@@ -122,7 +122,7 @@ Page
 	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256189537'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1256189537%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script> | 
 
 	<a href="help.php">About Dawn Scholar</a> | 
-	<a href="../index.php">Home page</a> 
+	<a href="/index.php">Home page</a> 
 </div>
 
 
