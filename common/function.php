@@ -83,3 +83,31 @@ function myLog($keyWord=''){
 	fclose($fh);
 
 }
+
+
+// show file list in this dir
+function tree(&$arr_file, $directory, $dir_name='')
+{
+ 
+    $mydir = dir($directory);
+    while($file = $mydir->read())
+    {
+        if((is_dir("$directory/$file")) AND ($file != ".") AND ($file != ".."))
+        {
+            tree($arr_file, "$directory/$file", "$dir_name/$file");
+        }
+        else if(($file != ".") AND ($file != ".."))
+        {
+            $arr_file[] = "$dir_name/$file";
+        }
+    }
+    $mydir->close();
+}
+
+// 下载文件函数
+function downloadfile($file_url, $save_to){
+	$content = file_get_contents($file_url);
+	//print_r($content);
+	file_put_contents($save_to, $content);
+}
+

@@ -32,4 +32,14 @@ The most update version now is version0.3.
 2.使用 getPic.php?url=https://www.XX.com/aa.png 下载图片，定期删除图片。
 3.查看图片：http://a.biomooc.com/img/aa.png ，注意 文件名和url中的一致。
 
-#v0.3.2 
+
+#v0.3.2 添加curl_init 下载图片 getPic2.php
+1.图片显示前增加下载等待时间5s；
+
+
+
+
+
+url: http://a.biomooc.com/
+local: http://scholar.wjl.com/
+

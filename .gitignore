@@ -21,3 +21,6 @@ img
 #显示文件列表
 *.list.bat
 *.list.txt
+
+#日志文件
+my_log.txt

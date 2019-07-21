@@ -119,9 +119,7 @@ Page
 
 
 <div style='text-align:center;' role="contentinfo">
-	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256189537'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1256189537%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script> | 
-
-	<a href="help.php">About Dawn Scholar</a> | 
+	&copy;2019 <a href="help.php">Dawn Scholar</a> | 
 	<a href="/index.php">Home page</a> 
 </div>
 
