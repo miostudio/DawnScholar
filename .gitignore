@@ -15,6 +15,9 @@ dustbin
 backup
 **/backup/
 
+#保存临时图片，不记录
+img
+
 #显示文件列表
 *.list.bat
 *.list.txt
