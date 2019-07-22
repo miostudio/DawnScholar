@@ -6,7 +6,7 @@ div,input {vertical-align:middle}/*css里面文本框和按钮对不齐*/
 .myWrap{width:1000px; margin:0px auto;  }
 #mySearchForm{font-size:15px;  border-bottom:2px red solid; padding:5px; margin-bottom:2px;}
 #mySearchForm b{	padding:0 5px;	width:100%;}
-#mySearchForm input{ border:1px solid #0096ff;  height:38px; margin:5px 0;}
+#mySearchForm input{ border:1px solid #0096ff;  height:38px; margin:5px 0; padding: 0 7px;}
 #mySearchForm input[type="text"]{width:60%;}
 
 #mySearchForm #page{ width:30px; padding-left:15px;}

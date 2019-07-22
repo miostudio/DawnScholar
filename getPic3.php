@@ -4,9 +4,11 @@ error_reporting(E_ALL);
 ini_set("display_errors","On");
 
 require 'common/function.php';
+//v2.0微调，增加hidden input
 ?>
 
 <head>
+<title>getPic3 - v0.3.4</title>
 <style>
 #myWrap{width:1000px; margin:35px auto;  }
 #mySearchLogo{
@@ -17,6 +19,7 @@ require 'common/function.php';
 }
 #mySearchResult input[type="text"]{width:60%; border:1px solid #0096ff;
 	height:40px;
+	padding:0 7px;
 }
 #mySearchResult input[type="submit"]{width:100px; border:1px solid #0096ff;
 	height:40px;
@@ -33,8 +36,8 @@ require 'common/function.php';
 <form method="POST" target="" id=mySearchResult onsubmit="return checkForm()">
 	<b id="mySearchLogo">Picture URL:</b>
 	<input type="text" name="keyword" value="<?php 
-	if(isset($_POST['keyword'])){
-		echo ascii2str($_POST['keyword']);
+	if(isset($_POST['keyword2'])){
+		echo ascii2str($_POST['keyword2']);
 	}
 	?>">
 	<input type="submit" name="submit" value="Get">
@@ -54,17 +57,33 @@ function string2ascii(str){
         return(num.join('_') )
 }
 
+//js提交表单
 function checkForm(){
     var form = document.getElementById('mySearchResult');
-    form['keyword'].value = string2ascii(form['keyword'].value) 
-    return true;
+    //form['keyword2'].value = string2ascii(form['keyword'].value) 
+	
+	//新建表单
+	var temp = document.createElement('form');
+    temp.action = '';
+    temp.method = 'post';
+    temp.style.display = 'none';
+	// 新建域
+	opt = document.createElement('input');
+	opt.name = "keyword2";
+	opt.value = string2ascii(form['keyword'].value);
+	//加入到文档结构
+	temp.appendChild(opt);
+	document.body.appendChild(temp);
+	temp.submit();//提交新临时表单
+	//原表单不提交
+    return false;
 }
 </script>
 
 <pre>
 <?php
-if(isset($_POST['keyword'])){
-	$url=$_POST['keyword'];
+if(isset($_POST['keyword2'])){
+	$url=$_POST['keyword2'];
 	if(trim($url)==""){
 		die("Pls input the URL");
 	}
@@ -72,8 +91,7 @@ if(isset($_POST['keyword'])){
 	die("Pls input the URL");
 }
 
-
-// 还原url
+// 从ascii还原url为string
 $file_url=ascii2str($url);
 
 //获取最后的文件名

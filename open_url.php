@@ -13,6 +13,7 @@ header("Content-type: text/html; charset=utf-8");
 }
 #mySearchResult input[type="text"]{width:60%; border:1px solid #0096ff;
 	height:40px;
+	padding:0 7px;
 }
 #mySearchResult input[type="submit"]{width:100px; border:1px solid #0096ff;
 	height:40px;
@@ -27,15 +28,14 @@ header("Content-type: text/html; charset=utf-8");
 <div id=myWrap>
 <form method="POST" target="" id=mySearchResult>
 <b id="mySearchLogo">
-Dawn Search(URL):
+Web URL:
 </b>
 <input type="text" name="keyword" value="<?php 
 if(isset($_POST['keyword'])){
 	echo $_POST['keyword'];
 }
 ?>">
-<input type="submit" name="submit" value="Search">
-<input type="submit" name="submit" value="Scholar">
+<input type="submit" name="submit" value="Open">
 </form>
 
 

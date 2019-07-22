@@ -51,10 +51,10 @@ window.onload=function(){
 
 <?php 
 require 'common/function.php';
- myLog('Visit Home Page');//登陆日志 ?>
+myLog('Visit Home Page');//登陆日志 ?>
 
 <body>
-<div id="url_info" class='card announce'>
+<div id="url_info" class='card announce' style="display:none;">
 	<h1>免费试用</h1><h3>To 2099.10.1</h3>
 	<b>红线之上可操作!</b><br><a href="help.php" target="_blank" title="帮助">帮助文档</a>.
 </div>
