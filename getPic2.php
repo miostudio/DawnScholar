@@ -1,8 +1,13 @@
 <p style="color:#ccc">1.It will take at least 5s to download the picture file.<br>
 
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors","On");
+
+
 require 'common/function.php';
 print("2.URL format: www.xx.com/getPic2.php?url=https://xx.com/xx2.png </p><pre>");
+
 
 //1. get pic url
 if(!empty($_GET['url'])){

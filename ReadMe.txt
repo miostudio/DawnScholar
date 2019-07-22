@@ -36,6 +36,10 @@ The most update version now is version0.3.
 #v0.3.2 添加curl_init 下载图片 getPic2.php
 1.图片显示前增加下载等待时间5s；
 
+#v0.3.3 要把url编码成ascii，传到服务器后在解码成url getPic3.php
+下载图片一直报错 Connection reset by peer) in headers
+或者，使用ajax
+
 
 
 

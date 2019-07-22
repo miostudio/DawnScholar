@@ -111,3 +111,16 @@ function downloadfile($file_url, $save_to){
 	file_put_contents($save_to, $content);
 }
 
+
+// ascii2str
+function ascii2str($ascii_url){
+        $arr=explode("_",$ascii_url);
+        #print_r($arr);
+        
+        $url="";
+        for ($x=0; $x<count($arr); $x++) {
+                $url.=chr($arr[$x]);
+        }
+        //echo "url=$str<br>";
+        return $url;
+}

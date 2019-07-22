@@ -1,6 +1,9 @@
 <p style="color:#ccc">1.It will take at least 5s to download the picture file.<br>
 
 <?php
+error_reporting(E_ALL);
+ini_set("display_errors","On");
+
 require 'common/function.php';
 //https://www.economist.com/sites/default/files/images/print-edition/20190615_CNP003_1.jpg
 
@@ -10,7 +13,9 @@ print("2.URL format: www.xx.com/getPic.php?url=https://xx.com/xx2.png </p><pre>"
 if(!empty($_GET['url'])){
 	$file_url = $_GET['url'];
 }else{
-	$file_url = "https://www.baidu.com/img/bd_logo1.png";
+	$file_url = "https://static01.nyt.com/images/2019/07/16/video/16vid-retro/14vid-retro-driverless-photo-facebookJumbo.jpg";
+
+	//"https://www.baidu.com/img/bd_logo1.png";
 }
 
 echo "3.pic_url=".$file_url."<br>";
