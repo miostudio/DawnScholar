@@ -119,8 +119,11 @@ Page
 
 
 <div style='text-align:center;' role="contentinfo">
-	&copy;2019 <a href="help.php">Dawn Scholar</a> | 
-	<a href="/index.php">Home page</a> 
+	&copy;2019 
+	<a target=_blank href=/>Dawn Scholar</a> |
+	<a target=_blank href=/open_url.php>get page</a> |
+	<a target=_blank href=/getPic3.php>get pic</a> | 
+	<a href="help.php">Help</a>
 </div>
 
 

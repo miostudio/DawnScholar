@@ -43,6 +43,10 @@ The most update version now is version0.3.
 #v0.3.4 getPic3.php 使用js新建表单，并提交。只post编码过的url，比较安全。
 添加新hidden input，保证UI没有异常。不好，原始、编码过的url都post出去了。
 
+#v0.3.5 美化提交按钮，底部添加链接
+
+
+
 
 
 url: http://a.biomooc.com/

@@ -3,6 +3,7 @@ header("Content-type: text/html; charset=utf-8");
 ?>
 
 <head>
+<link rel="stylesheet" href="css/scholarPage.css">
 <style>
 #myWrap{width:1000px; margin:35px auto;  }
 #mySearchLogo{
@@ -35,7 +36,7 @@ if(isset($_POST['keyword'])){
 	echo $_POST['keyword'];
 }
 ?>">
-<input type="submit" name="submit" value="Open">
+<input type="submit" name="submit" class=btn value="Load Page">
 </form>
 
 

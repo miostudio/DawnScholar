@@ -111,9 +111,9 @@ body{padding-bottom:50px;}
 		<h3 class="panel-title">联系方式</h3>
 	</div>
 	<div class="panel-body">
-		<p class=>Email: JimmyMall[AT]163.com</p>
-		<p>Tel: 15890149335</p>
-		<p>2015.8.25</p>
+		<p class=>Email: JimmyMall at 163 dot com</p>
+		<p>Tel: 158 九零妖四 9335</p>
+		<p>2015.8.25 - now</p>
 		<p>晓夜 </p>
 	</div>
 </div>	
@@ -127,7 +127,7 @@ body{padding-bottom:50px;}
 		<p>本站专注于提供高质量的scholar search服务，目前公益运行中。</p>
 		<p>如果您感觉该站点对您有帮助，请向版主支付宝(底部手机号)中打赏一二。</p>
 		<p><b>目前网站使用的免费主机时常不稳定，后续打算向付费版迁移，半年216元。</b>出于成本考虑，今后会酌情收费。</p>
-		<p>大家在使用过程中有任何意见或建议请及时反馈给我（底部联系方式）。</p>
+		<p>大家在使用过程中有任何意见或建议请及时反馈给我（右侧联系方式）。</p>
 		<p>在此祝大家学术生涯愉快顺利！</p>
 	</div>
 </div>
@@ -141,11 +141,14 @@ body{padding-bottom:50px;}
 	
 
 
-<div class="text-center">&copy; 2015 Dawn Scholar |
-
-	<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256189537'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/stat.php%3Fid%3D1256189537%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+<div class="text-center">&copy; 2019 
+	<a target=_blank href=/>Dawn Scholar</a> |
+	<a target=_blank href=/open_url.php>get page</a> |
+	<a target=_blank href=/getPic3.php>get pic</a>
 </div>
-	
+
+
+
 </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>

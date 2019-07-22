@@ -9,6 +9,7 @@ require 'common/function.php';
 
 <head>
 <title>getPic3 - v0.3.4</title>
+<link rel="stylesheet" href="css/scholarPage.css">
 <style>
 #myWrap{width:1000px; margin:35px auto;  }
 #mySearchLogo{
@@ -40,7 +41,7 @@ require 'common/function.php';
 		echo ascii2str($_POST['keyword2']);
 	}
 	?>">
-	<input type="submit" name="submit" value="Get">
+	<input type="submit" name="submit" class=btn value="Get Image">
 </form>
 
 
