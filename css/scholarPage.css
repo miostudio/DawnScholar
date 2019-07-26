@@ -54,6 +54,10 @@ div,input {vertical-align:middle}/*css里面文本框和按钮对不齐*/
     border: 1px solid #c6c6c6;
 }
 
+.lighter{
+	color: #ddd;
+}
+
 #erWeiMa{
 	position:absolute;
 	top:30px;

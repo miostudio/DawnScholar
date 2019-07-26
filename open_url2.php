@@ -46,6 +46,7 @@ require 'common/function.php';
 	<input type="submit" name="submit" class=btn value="Load Page">
 </form>
 
+<span class=lighter>Example URL: https://www.google.com/search?q=Snap+shares+soar+back+above+IPO+price+as+turnround+takes+hold</span><br>
 <script>
 //string2ascii
 function string2ascii(str){
@@ -107,8 +108,59 @@ if(isset($_POST['keyword2'])){
 }
 // 从ascii还原url为string
 $url=ascii2str($url2);
+echo $url."<hr>"; //debug
 
 
+$ch = curl_init();
+ 
+//设置选项，包括URL
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, '0'); // 对认证证书来源的检查
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, '0'); // 从证书中检查SSL加密算法是否存在
+
+//$headers = ['User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36']; //设置一个你的浏览器agent的header
+//curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']); // 模拟用户使用的浏览器
+$headers = array(
+    'User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9) Gecko/2008052906 Firefox/3.0',
+    'Referer: https://www.google.com',
+);
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1); // 使用自动跳转
+curl_setopt($ch, CURLOPT_AUTOREFERER, 1); // 自动设置Referer
+
+curl_setopt($ch, CURLOPT_TIMEOUT, 30); // 设置超时限制防止死循环
+curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 40);
+
+curl_setopt($ch, CURLOPT_HEADER, false); // 查询显示返回的Header区域内容 //返回response头部信息
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回 //TRUE 将curl_exec()获取的信息以字符串返回，而不是直接输出。
+
+curl_setopt($ch, CURLINFO_HEADER_OUT, true); //TRUE 时追踪句柄的请求字符串，从 PHP 5.1.3 开始可用。这个很关键，就是允许你查看请求header
+curl_setopt($ch, CURLOPT_REFERER, 'https://www.google.com');
+//curl_setopt($ch, CURLOPT_SSLVERSION, 2);
+
+
+try {
+	//执行并获取HTML文档内容
+	$output = curl_exec($ch);
+
+	//获取错误编码
+	$curlErrno = curl_errno($ch);
+	if ($curlErrno) {
+		throw new Exception(curl_error($ch) . '(' . $curlErrno . ')' . date('Y-m-d H:i:s',time()) );
+	}
+
+
+	//释放curl句柄
+	curl_close($ch);
+	 
+	//打印获得的数据
+	print_r($output);
+} catch (\Exception $e) {
+	echo $e->getMessage();
+}
+
+/*
 	$handle = fopen($url, "rb");
 
     $contents = '';
@@ -120,6 +172,7 @@ $url=ascii2str($url2);
      }
 	 echo $contents;
      fclose($handle); 
+*/
 ?>
 
 </div>

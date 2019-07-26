@@ -68,7 +68,7 @@ myLog('Visit Home Page');//登陆日志 ?>
 
 <div class=myWrap>
 <form method="POST" target="" id="mySearchForm">
-	<b>Dawn Search:</b>
+	<b>Keywords:</b>
 	<input type="text" name="keyword" id="keyword">
 	<input type="button" name="submit2" id='submit' class="btn" value="Scholar Search">
 <br>
@@ -107,7 +107,7 @@ Page
 </center>
 </form>
 
-<span id='schloar'>Schoar ...</span>
+<span id='schloar'>Scholar ...</span>
 
 </div>
 <style>

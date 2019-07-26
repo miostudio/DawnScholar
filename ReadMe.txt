@@ -44,6 +44,7 @@ The most update version now is version0.3.
 添加新hidden input，保证UI没有异常。不好，原始、编码过的url都post出去了。
 
 #v0.3.5 美化提交按钮，底部添加链接
+#v0.3.6 open_url2.php 也是用编码过的url传输。
 
 
 
