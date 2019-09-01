@@ -8,7 +8,7 @@ require 'common/function.php';
 ?>
 
 <head>
-<title>LoadPage - v0.3.5</title>
+<title>LoadPage - v0.3.5-2</title>
 <link rel="stylesheet" href="css/scholarPage.css">
 <style>
 #myWrap{width:1000px; margin:35px auto;  }
@@ -115,8 +115,8 @@ $ch = curl_init();
  
 //设置选项，包括URL
 curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, '0'); // 对认证证书来源的检查
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, '0'); // 从证书中检查SSL加密算法是否存在
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false); // 对认证证书来源的检查
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // 从证书中检查SSL加密算法是否存在
 
 //$headers = ['User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36']; //设置一个你的浏览器agent的header
 //curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']); // 模拟用户使用的浏览器

@@ -61,7 +61,7 @@ myLog('Visit Home Page');//登陆日志 ?>
 
 <div id='erWeiMa'>
 	<img src='images/fxxsEWM.jpg' /><br>
-	<b>扫一扫关注微信号。</b>
+	<b>微信公众号</b>
 </div>
 
 
@@ -121,9 +121,14 @@ Page
 <div style='text-align:center;' role="contentinfo">
 	&copy;2019 
 	<a target=_blank href=/>Dawn Scholar</a> |
-	<a target=_blank href=/open_url.php>get page</a> |
-	<a target=_blank href=/getPic3.php>get pic</a> | 
 	<a href="help.php">Help</a>
+	<br>
+	<a target=_blank href=/open_url.php>Get page</a>,
+	<a target=_blank href=/open_url2.php>Get page2</a> |
+	<br>
+	<a target=_blank href=/getPic.php>Get pic</a>,
+	<a target=_blank href=/getPic2.php>Get pic2</a>,
+	<a target=_blank href=/getPic3.php>Get pic3</a> | 
 </div>
 
 
