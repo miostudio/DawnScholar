@@ -126,7 +126,9 @@ $headers = array(
 );
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1); // 使用自动跳转
+if (ini_get('open_basedir') == '' && ini_get('safe_mode' == 'Off')) {
+	curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1); // 使用自动跳转
+}
 curl_setopt($ch, CURLOPT_AUTOREFERER, 1); // 自动设置Referer
 
 curl_setopt($ch, CURLOPT_TIMEOUT, 30); // 设置超时限制防止死循环

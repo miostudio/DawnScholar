@@ -124,3 +124,39 @@ function ascii2str($ascii_url){
         //echo "url=$str<br>";
         return $url;
 }
+
+//发出curl请求
+function curl_get_contents($url = '', $ispost = 0, $post_data = array())
+{
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+	
+	//curl_setopt($ch,CURLOPT_REFERER,"https://www.google.com");//伪造来源地址
+    //curl_setopt($ch,CURLOPT_COOKIESESSION,true); //能保存cookie
+    curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']); // 模拟用户使用的浏览器
+    //curl_setopt($ch, CURLOPT_PROXY, 'https://120.55.40.41:80');//伪造请求IP,可以为要请求的网站ip
+	
+	#
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0); // 对认证证书来源的检查
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0); // 从证书中检查SSL加密算法是否存在
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1); // 使用自动跳转
+    curl_setopt($ch, CURLOPT_AUTOREFERER, 1); // 自动设置Referer
+    curl_setopt($ch, CURLOPT_TIMEOUT, 20); // 设置超时限制防止死循环
+    curl_setopt($ch, CURLOPT_HEADER, 0); // 查询显示返回的Header区域内容
+	//CURLOPT_RETURNTRANSFER 为true，它就将使用PHP curl获取页面内容或提交数据，作为变量储存，而不是直接输出。
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回
+	
+    if ($ispost)
+    {        
+        curl_setopt($ch, CURLOPT_POST, $ispost);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+    }
+    $output = curl_exec($ch);
+	// 返回一个保护当前会话最近一次错误的字符串
+	$error = curl_error($ch);
+	if($error){
+		return 'Error: '.$error;
+	}
+    curl_close($ch);
+    return $output;
+}

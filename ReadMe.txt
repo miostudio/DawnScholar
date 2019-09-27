@@ -1,6 +1,7 @@
 # A scholar search engine cross GFW.
 For those who need scholar search in mainland China.
 url：http://a.biomooc.com/ 
+local: http://scholar.wjl.com/
 
 The most update version now is version0.3.
 
@@ -46,6 +47,9 @@ The most update version now is version0.3.
 #v0.3.5 美化提交按钮，底部添加链接
 #v0.3.6 open_url2.php 也是用编码过的url传输。
 #v0.3.7 首页更新底部地址 
+#v0.3.8 实现谷歌搜索 
+
+
 
 
 
