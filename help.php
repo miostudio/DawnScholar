@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-    <title>紧张开发中...</title>
+    <title>拂晓学术搜索 v0.3 - 断断续续开发中...</title>
 
     <!-- Bootstrap -->
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
@@ -112,11 +112,9 @@ body{padding-bottom:50px;}
 	</div>
 	<div class="panel-body">
 		<p class=>Email: JimmyMall at 163 dot com</p>
-		<p>Tel: 158 九零妖四 9335</p>
-		<p>2015.8.25 - now</p>
-		<p>晓夜 </p>
+		<p>since 2015.8.25</p>
 	</div>
-</div>	
+</div>
       </div>
       <div class="col-md-8 col-md-pull-4">
 <div class="panel panel-primary">
@@ -124,11 +122,10 @@ body{padding-bottom:50px;}
 		<h3 class="panel-title">公告</h3>
 	</div>
 	<div class="panel-body">
-		<p>本站专注于提供高质量的scholar search服务，目前公益运行中。</p>
-		<p>如果您感觉该站点对您有帮助，请向版主支付宝(底部手机号)中打赏一二。</p>
-		<p><b>目前网站使用的免费主机时常不稳定，后续打算向付费版迁移，半年216元。</b>出于成本考虑，今后会酌情收费。</p>
-		<p>大家在使用过程中有任何意见或建议请及时反馈给我（右侧联系方式）。</p>
-		<p>在此祝大家学术生涯愉快顺利！</p>
+		<p>本站专注于提供高质量的scholar search服务，仅限于学术研究使用。</p>
+		<p>如果您感觉该站点对您有帮助，请向版主支付宝(底部图片)打赏。</p>
+		<p><b>本站目前开支包括：域名费60元/年(点击购买云服务打折：<a target=_blank href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=u8k31xen">阿里云</a>)，主机费50元/年(感谢 <a target=_blank href="https://www.xiaoyeidc.com/page.aspx?c=referral&u=9523">小叶云</a> 激情支持)。</b></p>
+		<p>预祝大家学术愉快顺利！</p>
 	</div>
 </div>
       </div>
@@ -142,9 +139,7 @@ body{padding-bottom:50px;}
 
 
 <div class="text-center">&copy; 2019 
-	<a target=_blank href=/>Dawn Scholar</a> |
-	<a target=_blank href=/open_url.php>get page</a> |
-	<a target=_blank href=/getPic3.php>get pic</a>
+	<?php include('common/footer.php');?>
 </div>
 
 

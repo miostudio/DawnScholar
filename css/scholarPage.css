@@ -69,3 +69,5 @@ input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: #ddd;
   font-size: 16px;
 }
+
+#search{min-height:100px;}

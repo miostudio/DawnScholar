@@ -41,7 +41,7 @@ window.onload=function(){
 			return (false);
 		}
 		
-		$('search').innerHTML="<center style='color:red;'>拼命加载中...</center><br>"
+		$('search').innerHTML="<center style='color:red;'>拼命加载中...请等待5s</center><br>"
 		//发送请求
 		axios.post('/gs.php', {
 			submit: 'axios',
@@ -159,7 +159,7 @@ Sort by
 </div>
 
 
-<div id='search'></div>
+<div id='search'> <div style="width:800px;margin:0 auto;">只有红线以上才可操作，红线以下只能看，点击可能会报错。</div> </div>
 
 <style>
 /*

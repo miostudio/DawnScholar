@@ -52,7 +52,8 @@ The most update version now is version0.3.
 #v0.3.9 重写谷歌学术搜索
 	index.php, 后台是gs.php 谷歌学术
 	index4.php, 后台是getScholarAPI.php 谷歌学术（旧）不好用
-#
+#v0.4.0 微调文字
+#todo: 支持回车搜索
 #
 
 
