@@ -47,6 +47,7 @@ window.onload=function(){
 			keyword: encodeURIComponent(kw) //对kw进行加密
 		})
 		.then(function (response) {
+			response.data=eval('('+response.data+')'); //获取json
 			//console.log(response.data);//debug
 			$('search').innerHTML=response.data.html;
 			$('url').innerHTML=response.data.url;
@@ -123,7 +124,7 @@ myLog('Visit google Search Page');//登陆日志 ?>
 </div>
 
 
-<div id='search'>Search ...</div>
+<div id='search'></div>
 
 <style>
 /*
@@ -132,10 +133,6 @@ http://a.biomooc.com/search?q=apples&ei=jxWOXeaOD5DZwALci67gDg&start=20&sa=N&ved
 #search{width:1000px; margin:0 auto;}
 */
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #ddd;
-  font-size: 16px;
-}
 
 #url{color:#eee;}
 #gs_hdr,#gs_ab_rt,#gs_gb,#gs_lnv,#gs_n,#gs_ftr,

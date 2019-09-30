@@ -1,28 +1,77 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>Dawn scholar v0.3.0</title>
+<title>Google Search - Dawn scholar v0.3.0</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
 
 <link rel="stylesheet" href="css/scholarPage.css">
 <script type="text/javascript" src="js/ajax.js"></script>
+<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+
 
 <script>
+function string2ascii(str){
+        num=[]
+        for(var i=0;i<str.length;i++){
+                num.push(str.charCodeAt(i))
+        }
+        return(num.join('_') )
+}
+
 window.onload=function(){
 	//获取表单
 	var f=$('mySearchForm');
+	$('keyword').focus();//自动获得焦点
+	
+
+	var showSearch=function(){
+		var kw=f.keyword.value;
+		var submit=f.submit.value;
+		
+		var since=f.since.value;
+		var sortBy=f.sortBy.value;
+		var page=f.page.value;
+		
+		//如果没有输入关键词，则不查询；
+		if(''==kw.replace(/\s/g, '')){
+			alert('Please input at least one key word.');
+			$("keyword").innerHTML="";
+			$('keyword').select();
+			return (false);
+		}
+		
+		$('search').innerHTML="<center style='color:red;'>拼命加载中...</center><br>"
+		//发送请求
+		axios.post('/gs.php', {
+			submit: 'axios',
+			since:since,
+			sortBy:sortBy,
+			page:page,
+			//keyword: string2ascii( encodeURIComponent(kw) ) //对kw进行加密
+			keyword: encodeURIComponent(kw) //对kw进行加密
+		})
+		.then(function (response) {
+			response.data=eval('('+response.data+')'); //获取json
+			//console.log(response.data);//debug
+			$('search').innerHTML=response.data.html;
+			$('url').innerHTML=response.data.url;
+		})
+		.catch(function (error) {
+			console.log(error);
+		});
+	}
 	
 	//搜索按钮绑定事件
-	$("submit").onclick=showScholar;
+	$("submit").onclick=showSearch
 	
 	//下拉框事件
 	f.since.onchange=f.sortBy.onchange=function(){
 		//执行搜索
 		if(f.keyword.value=='') return;
-		showScholar();
+		showSearch();
 	};
-	
+	/**/
 	//上一页
 	f.previous.onclick=function(){
 		changePage(-1);
@@ -43,7 +92,7 @@ window.onload=function(){
 		f.page.value=page;
 		//执行搜索
 		if(f.keyword.value=='') return;
-		showScholar();
+		showSearch();
 	}
 }
 </script>
@@ -51,7 +100,7 @@ window.onload=function(){
 
 <?php 
 require 'common/function.php';
-myLog('Visit Home Page');//登陆日志 ?>
+myLog('Visit google Search Page');//登陆日志 ?>
 
 <body>
 <div id="url_info" class='card announce' style="display:none;">
@@ -67,12 +116,11 @@ myLog('Visit Home Page');//登陆日志 ?>
 
 
 <div class=myWrap>
-<form method="POST" target="" id="mySearchForm">
-	<b>Keywords:</b>
-	<input type="text" name="keyword" id="keyword">
-	<input type="button" name="submit2" id='submit' class="btn" value="Scholar Search">
-<br>
-
+	<form method="POST" target="" id="mySearchForm">
+		<b>Keywords:</b>
+		<input type="text" name="keyword" id="keyword" placeholder='Input your scholar keyword(s) here'>
+		<input type="button" name="submit2" id='submit' class="btn" value="Scholar Search">
+	
 <center>
 Since 
 <select name="since">
@@ -98,23 +146,34 @@ Sort by
 </select>
 
 
-
-<span class="spacer"></span>
-Page
-<input type="button" name="previous" class='btn light' value="&lt;">
-<input type='text' name='page' id='page' class='page' value="1">
-<input type="button" name="next" class='btn light' value="&gt;">
+	<span class="spacer"></span>
+	Page
+	<input type="button" name="previous" class='btn light' value="&lt;">
+	<input type='text' name='page' id='page' class='page' value="1">
+	<input type="button" name="next" class='btn light' value="&gt;">
 </center>
-</form>
 
-<span id='schloar'>Scholar ...</span>
-
+		<div id='url'></div>
+	</form>
+	<br>
 </div>
+
+
+<div id='search'></div>
+
 <style>
+/*
+#search{width:1000px; margin:0 auto;}
+*/
+
+
+#url{color:#eee;}
 #gs_hdr,#gs_ab_rt,#gs_gb,#gs_lnv,#gs_n,#gs_ftr,
 #gs_hp_main #gs_hp_tsi {display:none;}
 
 #gs_ccl { margin-left: 10px;}
+
+.logo{display: none;}
 </style>
 
 

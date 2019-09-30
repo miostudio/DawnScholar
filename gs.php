@@ -16,25 +16,48 @@ if(!isset($data['submit'])){
 	die();
 }
 
-$kw=$data['keyword']; myLog($kw);
-$page=$data['page'];
 
+//组装url参数，请求并获得google scholar
+//$url="http://www.google.com.hk/search?ie=UTF-8&q=武汉";
+if(isset($data['keyword'])){
+	$kw=$data['keyword']; myLog($kw);//记录日志
+	//$keyword2=urlencode($keyword1);
+	//todo 调试
+	//echo '<hr>'.$keyword1,' <hr> '.$a;	die();
 
-//设定page的范围
-$page=$page<=10?$page:10;
-$page=$page>=1?$page:1;
+	//获取其他参数
+	$since=$data['since'];
+	$sortBy=$data['sortBy'];
 
+	$page=$data['page'];
+	//设定page的范围
+	$page=$page<=10?$page:10;
+	$page=$page>=1?$page:1;
 
-#$kw2=urldecode( $kw );
-//构造url
-//$url="https://www.baidu.com/s?wd=".$kw;
-$url="https://www.google.com/search?q=".$kw;
-if($page>=2){
-	$url=$url."&start=".($page-1)*10;
+	$url="https://scholar.google.com/scholar?";
+
+	//定义页码
+	if($page>1){
+		//$url .= '&start=' . ($page-1) . '0';
+		$url .= "&start=".($page-1)*10;
+	}
+
+	//加关键词
+	$url .= "ie=UTF-8&q=$kw";
+
+	//是否限制时间：年份
+	if($since!=0){$url .= "&as_ylo=" . $since;}
+	if($sortBy==1){$url .= "&scisbd=1";}
+}else{
+	$url="https://scholar.google.com/";
+};
+
+//测试是否组装好url
+if(DEBUG_MODE){
+	echo "<pre>"; echo "<hr>$url<hr>"; var_dump($_POST);
+	echo "<hr>"; print_r($_POST); //die();
 }
 
-//$url="https://cn.bing.com/search?q=".$kw;
-//$url="https://www.bing.com/search?q=".$kw;
 
 #$url="https://www.showmyip.com/";
 $arr=array(
@@ -45,7 +68,6 @@ $arr=array(
 	'url'=>$url,
 	#'html'=>'html <a>code here</a>',#curl_get_contents($url),
 	'html'=>curl_get_contents($url),
-	#'kw'=>urlencode( ascii2str($data['keyword'])  )
 );
 echo json_encode( $arr );
 

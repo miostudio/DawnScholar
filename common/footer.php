@@ -11,6 +11,8 @@
 	<a target=_blank href=/getPic3.php>Get pic3</a> | 
 	<br> Google:
 	<a target=_blank href=/index3.php>Search</a> | 
+	<a target=_blank href=/index.php>Scholar</a> | 
+	<!--a target=_blank href=/index4.php>Scholar2</a-->
 	<a target=_blank href='https://colab.research.google.com/'>colab</a> | 
 </div>
 
