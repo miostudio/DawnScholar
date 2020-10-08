@@ -160,3 +160,25 @@ function curl_get_contents($url = '', $ispost = 0, $post_data = array())
     curl_close($ch);
     return $output;
 }
+
+//使用PHP5面向对象的写法,获取文件名列表，按照时间倒序排列
+//https://www.cnblogs.com/hltswd/p/6279824.html
+//v1.2
+function getFileList($directory){
+	$files = array();
+	try {
+		$dir = new DirectoryIterator($directory);
+
+	} catch (Exception $e) {
+		throw new Exception($directory . ' is not readable');
+	}
+	foreach($dir as $file) {
+		if(is_dir($file->getFileName())) continue;//跳过文件夹
+		if($file->isDot()) continue;
+		//print_r($file);
+		$files[$file->getFileName()]=$file->getCTime();
+	}
+	//
+	arsort($files);
+	return $files;
+}

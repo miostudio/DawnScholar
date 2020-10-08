@@ -121,8 +121,9 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); // 从证书中检查SSL加密�
 //$headers = ['User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36']; //设置一个你的浏览器agent的header
 //curl_setopt($ch, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']); // 模拟用户使用的浏览器
 $headers = array(
-    'User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9) Gecko/2008052906 Firefox/3.0',
-    'Referer: https://www.google.com',
+    #'User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; zh-CN; rv:1.9) Gecko/2008052906 Firefox/3.0',
+    'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36',
+    'Referer: https://www.baidu.com',
 );
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
@@ -138,7 +139,7 @@ curl_setopt($ch, CURLOPT_HEADER, false); // 查询显示返回的Header区域内
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回 //TRUE 将curl_exec()获取的信息以字符串返回，而不是直接输出。
 
 curl_setopt($ch, CURLINFO_HEADER_OUT, true); //TRUE 时追踪句柄的请求字符串，从 PHP 5.1.3 开始可用。这个很关键，就是允许你查看请求header
-curl_setopt($ch, CURLOPT_REFERER, 'https://www.google.com');
+curl_setopt($ch, CURLOPT_REFERER, 'https://www.baidu.com');
 //curl_setopt($ch, CURLOPT_SSLVERSION, 2);
 
 

@@ -54,6 +54,10 @@ The most update version now is version0.3.
 	index4.php, 后台是getScholarAPI.php 谷歌学术（旧）不好用
 #v0.4.0 微调文字
 #v0.4.1 添加audio/目录，下载音频文件，获取可外链的音频文件
+v0.4.3 微调
+
+##---> commit 
+##-------------> git push origin
 #todo: 支持回车搜索
 #
 

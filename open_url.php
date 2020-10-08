@@ -109,7 +109,7 @@ if(isset($_POST['keyword2'])){
 $url=ascii2str($url2);
 
 
-	$handle = fopen($url, "rb");
+	$handle = fopen($url, "rb", false);
 
     $contents = '';
 	if(!$handle){

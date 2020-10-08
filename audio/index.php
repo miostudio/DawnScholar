@@ -10,7 +10,7 @@ local: http://scholar.wjl.com/audio/
 server: http://a2.biomooc.com/audio/
 * v2.0微调，增加hidden input
 * v0.3.6 可以下载静态文件，并可以外链了
-* v0.3.7 todo 排序，按照时间倒序排序
+* v0.3.7 排序，按照时间倒序排序
 */
 ?>
 
@@ -111,19 +111,31 @@ function checkForm(){
 
 <pre>
 <?php
+
+
+
 //打印当前文件
 function printDir(){
-	$arr_file = array();
-	tree($arr_file, "./");
+	//$arr_file = array();
+	//tree($arr_file, "./");
+	$arr_fileR=getFileList('./');
+	$arr_file=array_keys( $arr_fileR );
 
-	echo '<hr>links: <a target="_blank" href="static.php">查看文件API</a> | ';
+	echo '<hr>Useful links: ';
 	echo '<a target="_blank" href="http://ielts.biomooc.com/listening/player.html">AB复读机</a> | ';
 	//<a target=_blank href='https://www.51voa.com/'>https://www.51voa.com/</a>
-	echo '<a target="_blank" href="https://www.51voa.com/">51voa</a><hr>';
-	print('现有的音频文件：<br>');
+	echo '<a target="_blank" href="https://www.51voa.com/">51voa</a> | ';
+	echo '<a target="_blank" href="https://www.scientificamerican.com/podcast/60-second-science/">科学60秒</a> | ';
+	echo '<a target="_blank" href="https://www.mprnews.org/arts/art-hounds">art-hounds</a> | ';
+	echo '<a target="_blank" href="static.php">查看文件API</a> | <hr>';
+	
+	print('Available Audio on the server:<br>');
 	//循环打印外链地址
 	for ($x=0; $x<count($arr_file); $x++) {
-		$fname2=substr($arr_file[$x],1);
+		//$fname2=substr($arr_file[$x],1);
+		$fname2=$arr_file[$x];
+		$fname2 = iconv("GBK", "UTF-8", $fname2);//防中文乱码
+		
 		$arr=explode('.', $fname2);		
 		if( array_pop( $arr )!="php"){
 			$outer='//'.$_SERVER['HTTP_HOST'].'/audio/static.php?file='.$fname2;
